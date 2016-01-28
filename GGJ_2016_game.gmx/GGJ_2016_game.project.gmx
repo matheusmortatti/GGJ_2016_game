@@ -5,9 +5,48 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
-  <backgrounds name="background"/>
+  <sprites name="sprites">
+    <sprite>sprites\spr_portrait</sprite>
+    <sprite>sprites\spr_black_bar</sprite>
+    <sprite>sprites\spr_player</sprite>
+  </sprites>
+  <backgrounds name="background">
+    <background>background\bg_tile_floor</background>
+    <background>background\bg_tile_wall</background>
+    <background>background\bg_tile_void</background>
+    <background>background\bg_tiles</background>
+  </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\movement_script.gml</script>
+    <script>scripts\grid_place_meeting.gml</script>
+  </scripts>
+  <fonts name="fonts">
+    <font>fonts\f_chat</font>
+  </fonts>
+  <objects name="objects">
+    <objects name="Text_Draw_Group">
+      <object>objects\obj_black_bar</object>
+      <object>objects\obj_dialogue</object>
+    </objects>
+    <objects name="Room_Gen_Group">
+      <object>objects\obj_level_generator</object>
+    </objects>
+    <objects name="Actors_Group">
+      <object>objects\obj_player</object>
+    </objects>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\room_test_mat</room>
+    <room>rooms\room_test_leo</room>
+  </rooms>
+  <constants number="5">
+    <constant name="CELL_WIDTH">32</constant>
+    <constant name="CELL_HEIGHT">32</constant>
+    <constant name="FLOOR">-5</constant>
+    <constant name="WALL">-6</constant>
+    <constant name="VOID">-7</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>
