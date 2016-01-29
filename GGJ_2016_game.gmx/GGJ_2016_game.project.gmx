@@ -20,6 +20,7 @@
   <scripts name="scripts">
     <script>scripts\movement_script.gml</script>
     <script>scripts\grid_place_meeting.gml</script>
+    <script>scripts\scr_init_game.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_chat</font>
@@ -34,6 +35,7 @@
     </objects>
     <objects name="Actors_Group">
       <object>objects\obj_player</object>
+      <object>objects\obj_camera</object>
     </objects>
   </objects>
   <rooms name="rooms">
