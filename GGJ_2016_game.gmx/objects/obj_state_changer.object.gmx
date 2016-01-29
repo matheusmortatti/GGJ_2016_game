@@ -25,15 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Creation Code
-
-view_wport[0] = global.gameWidth;
-view_hport[0] = global.gameHeight;
-view_wview[0] = global.gameWidth;
-view_hview[0] = global.gameHeight;
-display_set_gui_size(global.gameWidth, global.gameHeight);
-room_speed = 60;
-
+            <string>///Global Variables
+global.state_std = NORMAL
 </string>
           </argument>
         </arguments>
@@ -56,15 +49,17 @@ room_speed = 60;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Pixel Perfect refresh
-
-if(window_get_height() != global.gameHeight * global.zoom
-    &amp;&amp; window_get_width() != global.gameWidth * global.zoom
-    &amp;&amp; !window_get_fullscreen())
-{
-    window_set_size(global.gamewidth * global.zoom, global.gameHeight * global.zoom);
-    surface_resize(application_surface, global.gameWidth, global.gameHeight);
-    display_reset(0, false);
+            <string>//check state
+if(!global.state_geral != NORMAL){
+    if(global.state_std == LSD){
+        //new sprites
+        with(obj_player_leo){
+            
+        }
+    }
+    if(global.state_std == MARY){
+       //new sprites
+    }
 }
 </string>
           </argument>
