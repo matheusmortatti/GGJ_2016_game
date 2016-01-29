@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>/// Level Generator
 
+// Init game
+scr_init_game();
+
 // Set room size
 room_width = (CELL_WIDTH div 16) * 720;
 room_height = (CELL_HEIGHT div 16) * 720;
@@ -47,6 +50,9 @@ randomize();
 // Sets controller
 var cx = width div 2;
 var cy = height div 2;
+
+// Create instance of the camera
+instance_create(0, 0, obj_camera);
 
 // Place player in the room
 instance_create(cx * CELL_WIDTH + CELL_WIDTH / 2, cy * CELL_HEIGHT + CELL_HEIGHT / 2, obj_player);
@@ -233,9 +239,6 @@ for (var yy = 0; yy &lt; height * 2; yy++)
         }
     }
 }
-
-
-
 
 </string>
           </argument>
