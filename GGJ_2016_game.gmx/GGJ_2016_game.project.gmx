@@ -37,8 +37,12 @@
       <object>objects\obj_player</object>
       <object>objects\obj_camera</object>
     </objects>
+    <objects name="Menu_Control_Group">
+      <object>objects\obj_redir</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\main</room>
     <room>rooms\room_test_mat</room>
     <room>rooms\room_test_leo</room>
   </rooms>
