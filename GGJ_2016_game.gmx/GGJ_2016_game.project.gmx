@@ -32,6 +32,7 @@
     </objects>
     <objects name="Room_Gen_Group">
       <object>objects\obj_level_generator</object>
+      <object>objects\obj_procedural_rooms</object>
     </objects>
     <objects name="Actors_Group">
       <object>objects\obj_player</object>
