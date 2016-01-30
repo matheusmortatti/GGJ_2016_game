@@ -160,7 +160,7 @@ for(var yy = 1; yy &lt; height; yy++)
         }
         else
         { 
-            if(grid[# xx, yy] == OBSTACLE) tile_add(bg_tile_wall, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 0);
+            if(grid[# xx, yy] == OBSTACLE) tile_add(bg_tile_wall, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, -yy);
             mp_grid_add_cell(grid_path, xx, yy);
         }
     }

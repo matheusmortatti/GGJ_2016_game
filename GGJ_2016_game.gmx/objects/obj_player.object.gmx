@@ -35,6 +35,33 @@ flag_down = false;
 flag_left = false;
 flag_right = false;
 img_spd = 0.05;
+canShoot = true;
+laser_id = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Can Shoot
+
+canShoot = true;
 </string>
           </argument>
         </arguments>
@@ -147,6 +174,33 @@ else{ image_speed = img_spd; sprite_index = sprites_array[0]}}
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Laser follows player
+
+if(instance_exists(laser_id))
+{
+    laser_id.x = x;
+    laser_id.y = y - 5;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="4" ename="obj_enemy">
       <action>
@@ -166,6 +220,36 @@ else{ image_speed = img_spd; sprite_index = sprites_array[0]}}
           <argument>
             <kind>1</kind>
             <string>/// Enemy Collision
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="90">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Shoot them lasers
+
+if(canShoot) 
+{
+    canShoot = false;
+    laser_id = instance_create(x, y - 5, obj_laser);
+    alarm[0] = 2 * room_speed;
+}
 </string>
           </argument>
         </arguments>
