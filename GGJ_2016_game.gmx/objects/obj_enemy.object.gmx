@@ -31,7 +31,7 @@ path = path_add();
 
 spd = 2;
 hp = 100;
-damagePerSecond = 0.5;
+damagePerSecond = 10;
 
 pursuing = false;
 
@@ -117,7 +117,7 @@ alarm[0] = 0.5 * room_speed;
 
 depth = -y + 5;
 
-if(point_distance(x, y, obj_player.x, obj_player.y) &lt; 50)
+if(point_distance(x, y, obj_player.x, obj_player.y) &lt; 80)
 {
     pursuing = true;
 }
@@ -201,31 +201,6 @@ var hspd = lengthdir_x(1, dir);
 var vspd = lengthdir_y(1, dir);
 movement_script(hspd, vspd);
 draw_self();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_black_bar">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Taking damage
-
-hp -= other.damagePerSecond;
 </string>
           </argument>
         </arguments>
