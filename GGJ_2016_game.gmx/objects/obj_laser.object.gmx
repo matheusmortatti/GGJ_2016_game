@@ -79,8 +79,6 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>/// Stretch sprite
-
-image_xscale = stretchSize;
 </string>
           </argument>
         </arguments>

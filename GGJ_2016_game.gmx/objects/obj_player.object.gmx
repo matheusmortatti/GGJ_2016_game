@@ -37,6 +37,10 @@ flag_right = false;
 img_spd = 0.05;
 canShoot = true;
 laser_id = 0;
+state_player = DOWN;
+laser_positionX = x;
+laser_positionY = y;
+hp = 100;
 </string>
           </argument>
         </arguments>
@@ -162,13 +166,13 @@ sprites_array[4] = spr_player_left_l;
             <string>///Move caracter
 
 if x=xprevious then {
-if y&lt;yprevious then {image_speed = img_spd*3;  sprite_index = sprites_array[1]}
-else if y&gt;yprevious then {image_speed = img_spd*3; sprite_index = sprites_array[2]}
-else{ image_speed = img_spd; sprite_index = sprites_array[0]}}
+if y&lt;yprevious then {state_player = UP; image_speed = img_spd*3;sprite_index = sprites_array[1]}
+else if y&gt;yprevious then {state_player = DOWN; image_speed = img_spd*3;sprite_index = sprites_array[2]}
+else if state_player = DOWN then { image_speed = img_spd; sprite_index = sprites_array[0]}else{image_speed = 0}}
 else if y=yprevious then {
-if x&lt;xprevious then {sprite_index = sprites_array[4]}
-else if x&gt;xprevious then {sprite_index = sprites_array[3]}
-else{ image_speed = img_spd; sprite_index = sprites_array[0]}}
+if x&lt;xprevious then {state_player = RIGHT; image_speed = img_spd*3;sprite_index = sprites_array[4]}
+else if x&gt;xprevious then {state_player = LEFT; image_speed = img_spd*3;sprite_index = sprites_array[3]}
+else if state_player = DOWN then { image_speed = img_spd; sprite_index = sprites_array[0]}else{image_speed = 0}}
 
 </string>
           </argument>
@@ -194,9 +198,37 @@ else{ image_speed = img_spd; sprite_index = sprites_array[0]}}
 
 if(instance_exists(laser_id))
 {
-    laser_id.x = x;
-    laser_id.y = y - 5;
+    if(state_player == UP) { laser_positionX = x; laser_positionY = y - 13; laser_id.image_yscale = -laser_id.stretchSize; }
+    else if(state_player == DOWN) { laser_positionX = x; laser_positionY = y - 6; laser_id.image_yscale = laser_id.stretchSize; }
+    else if(state_player == LEFT) { laser_positionX = x + 3; laser_positionY = y - 6; laser_id.image_xscale = laser_id.stretchSize; }
+    else if(state_player == RIGHT) { laser_positionX = x - 3; laser_positionY = y - 6; laser_id.image_xscale = -laser_id.stretchSize; }
+    
+    laser_id.x = laser_positionX;
+    laser_id.y = laser_positionY;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Death
+
+if (hp &lt;= 0) room_restart();
 </string>
           </argument>
         </arguments>
@@ -220,6 +252,9 @@ if(instance_exists(laser_id))
           <argument>
             <kind>1</kind>
             <string>/// Enemy Collision
+hp -= other.damagePerSecond;
+
+image_alpha = hp / 100;
 </string>
           </argument>
         </arguments>
@@ -247,9 +282,36 @@ if(instance_exists(laser_id))
 if(canShoot) 
 {
     canShoot = false;
-    laser_id = instance_create(x, y - 5, obj_laser);
+    laser_id = instance_create(x, y, obj_laser);
     alarm[0] = 2 * room_speed;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Draw Health Bar
+
+draw_self();
+
+draw_healthbar(x - 25, y - 20, x + 25, y - 18, hp, c_black, c_red, c_green, 0, false, false);
 </string>
           </argument>
         </arguments>
