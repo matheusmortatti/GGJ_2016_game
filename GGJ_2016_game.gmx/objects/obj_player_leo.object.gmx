@@ -138,8 +138,8 @@ sprites_array[4] = spr_player_left_l;
             <string>///Move caracter
 
 if x=xprevious then {
-if y&lt;yprevious then {sprite_index = sprites_array[1]}
-else if y&gt;yprevious then {sprite_index = sprites_array[2]}
+if y&lt;yprevious then {image_speed = img_spd*5;  sprite_index = sprites_array[1]}
+else if y&gt;yprevious then {image_speed = img_spd*5; sprite_index = sprites_array[2]}
 else{ image_speed = img_spd; sprite_index = sprites_array[0]}}
 else if y=yprevious then {
 if x&lt;xprevious then {sprite_index = sprites_array[4]}
