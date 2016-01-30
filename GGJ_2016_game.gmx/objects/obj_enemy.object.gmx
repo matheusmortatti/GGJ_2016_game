@@ -167,7 +167,7 @@ if(hp &lt;= 0) instance_destroy();
           <argument>
             <kind>1</kind>
             <string>/// Take damage
-hp -= other.damagePerSecond;
+if(other.image_alpha != 0) hp -= other.damagePerSecond;
 </string>
           </argument>
         </arguments>
