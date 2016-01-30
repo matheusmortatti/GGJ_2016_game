@@ -36,6 +36,8 @@ damagePerSecond = 0.5;
 pursuing = false;
 
 alarm[0] = 0.5 * room_speed;
+img_spd = 0.05;
+state_player = DOWN;
 </string>
           </argument>
         </arguments>
@@ -198,6 +200,7 @@ var dir = point_direction(other.x, other.y, x, y);
 var hspd = lengthdir_x(1, dir);
 var vspd = lengthdir_y(1, dir);
 movement_script(hspd, vspd);
+draw_self();
 </string>
           </argument>
         </arguments>
@@ -255,6 +258,84 @@ if(path_exists(path)) {
       </action>
     </event>
     <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Set sprites set
+if(global.state_std == NORMAL){
+sprites_array[0] = spr_player;
+sprites_array[1] = spr_player_up;
+sprites_array[2] = spr_player_down;
+sprites_array[3] = spr_player_right;
+sprites_array[4] = spr_player_left;
+sprites_array[5] = spr_player_up_s;
+sprites_array[6] = spr_player_right_s;
+sprites_array[7] = spr_player_left_s;
+} else
+if(global.state_std == MARY){
+sprites_array[0] = spr_player_m;
+sprites_array[1] = spr_player_up_m;
+sprites_array[2] = spr_player_down_m;
+sprites_array[3] = spr_player_right_m;
+sprites_array[4] = spr_player_left_m;
+}if(global.state_std == LSD){
+sprites_array[0] = spr_player_l;
+sprites_array[1] = spr_player_up_l;
+sprites_array[2] = spr_player_down_l;
+sprites_array[3] = spr_player_right_l;
+sprites_array[4] = spr_player_left_l;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Move caracter
+
+if x=xprevious then {
+if y&lt;yprevious then {state_player = UP; image_speed = img_spd*6;sprite_index = sprites_array[1]}
+else if y&gt;yprevious then {state_player = DOWN; image_speed = img_spd*6;sprite_index = sprites_array[2]}
+else if state_player = DOWN then { image_speed = img_spd; sprite_index = sprites_array[0]}
+else if state_player = UP then { image_speed = img_spd; sprite_index = sprites_array[5]}
+else if state_player = RIGHT then { image_speed = img_spd; sprite_index = sprites_array[6]}
+else if state_player = LEFT then { image_speed = img_spd; sprite_index = sprites_array[7]}}
+else if y=yprevious then {
+if x&lt;xprevious then {state_player = LEFT; image_speed = img_spd*6;sprite_index = sprites_array[4]}
+else if x&gt;xprevious then {state_player = RIGHT; image_speed = img_spd*6;sprite_index = sprites_array[3]}
+else if state_player = DOWN then { image_speed = img_spd; sprite_index = sprites_array[0]}else{image_speed = 0}}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
