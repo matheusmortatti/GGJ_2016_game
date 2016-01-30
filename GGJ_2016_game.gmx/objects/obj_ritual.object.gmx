@@ -74,22 +74,21 @@ with(obj_ritual){
          step[i] = RIGHT;
          i++;
     }
-    for(j= 0;j&lt;2 &amp;&amp; !erro;j++){
+    for(j= 0;j &lt;= i &amp;&amp; !erro;j++){
         if( step[j] != sequence[j]){
              erro = true;
         }
     }
-    if( erro){
+    if(erro){
         i = 0;
         erro = false
     }
     else{
-    sair = true
+        with(obj_player_leo){
+        can_move = true;
+        }
     }
-    if(sair){
-    with(obj_player_leo){
-    can_move = true;
-    }}}}}
+    }}}
 </string>
           </argument>
         </arguments>
