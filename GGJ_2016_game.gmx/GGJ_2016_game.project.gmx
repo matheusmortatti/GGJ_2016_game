@@ -54,12 +54,14 @@
     <objects name="Menu_Control_Group">
       <object>objects\obj_redir</object>
       <object>objects\obj_state_changer</object>
+      <object>objects\obj_ini_game</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\main</room>
     <room>rooms\room_test_mat</room>
     <room>rooms\room_test_leo</room>
+    <room>rooms\room_ini_game</room>
   </rooms>
   <constants number="13">
     <constant name="RIGHT">31</constant>
