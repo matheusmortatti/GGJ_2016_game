@@ -54,6 +54,7 @@
       <object>objects\obj_camera</object>
       <object>objects\obj_enemy</object>
       <object>objects\obj_laser</object>
+      <object>objects\obj_health_pack</object>
     </objects>
     <objects name="Menu_Control_Group">
       <object>objects\obj_redir</object>
@@ -61,6 +62,10 @@
       <object>objects\obj_ini_game</object>
     </objects>
   </objects>
+  <timelines name="timelines">
+    <timeline>timelines\tl_ini_game</timeline>
+    <timeline>timelines\tl_end_game</timeline>
+  </timelines>
   <rooms name="rooms">
     <room>rooms\main</room>
     <room>rooms\room_test_mat</room>

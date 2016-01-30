@@ -129,6 +129,9 @@ sprites_array[1] = spr_player_up;
 sprites_array[2] = spr_player_down;
 sprites_array[3] = spr_player_right;
 sprites_array[4] = spr_player_left;
+sprites_array[5] = spr_player_up_s;
+sprites_array[6] = spr_player_right_s;
+sprites_array[7] = spr_player_left_s;
 } else
 if(global.state_std == MARY){
 sprites_array[0] = spr_player_m;
@@ -166,14 +169,16 @@ sprites_array[4] = spr_player_left_l;
             <string>///Move caracter
 
 if x=xprevious then {
-if y&lt;yprevious then {state_player = UP; image_speed = img_spd*3;sprite_index = sprites_array[1]}
-else if y&gt;yprevious then {state_player = DOWN; image_speed = img_spd*3;sprite_index = sprites_array[2]}
-else if state_player = DOWN then { image_speed = img_spd; sprite_index = sprites_array[0]}else{image_speed = 0}}
+if y&lt;yprevious then {state_player = UP; image_speed = img_spd*6;sprite_index = sprites_array[1]}
+else if y&gt;yprevious then {state_player = DOWN; image_speed = img_spd*6;sprite_index = sprites_array[2]}
+else if state_player = DOWN then { image_speed = img_spd; sprite_index = sprites_array[0]}
+else if state_player = UP then { image_speed = img_spd; sprite_index = sprites_array[5]}
+else if state_player = RIGHT then { image_speed = img_spd; sprite_index = sprites_array[6]}
+else if state_player = LEFT then { image_speed = img_spd; sprite_index = sprites_array[7]}}
 else if y=yprevious then {
-if x&lt;xprevious then {state_player = RIGHT; image_speed = img_spd*3;sprite_index = sprites_array[4]}
-else if x&gt;xprevious then {state_player = LEFT; image_speed = img_spd*3;sprite_index = sprites_array[3]}
+if x&lt;xprevious then {state_player = LEFT; image_speed = img_spd*6;sprite_index = sprites_array[4]}
+else if x&gt;xprevious then {state_player = RIGHT; image_speed = img_spd*6;sprite_index = sprites_array[3]}
 else if state_player = DOWN then { image_speed = img_spd; sprite_index = sprites_array[0]}else{image_speed = 0}}
-
 </string>
           </argument>
         </arguments>
@@ -198,10 +203,10 @@ else if state_player = DOWN then { image_speed = img_spd; sprite_index = sprites
 
 if(instance_exists(laser_id))
 {
-    if(state_player == UP) { laser_positionX = x; laser_positionY = y - 13; laser_id.image_yscale = -laser_id.stretchSize; }
-    else if(state_player == DOWN) { laser_positionX = x; laser_positionY = y - 6; laser_id.image_yscale = laser_id.stretchSize; }
-    else if(state_player == LEFT) { laser_positionX = x + 3; laser_positionY = y - 6; laser_id.image_xscale = laser_id.stretchSize; }
-    else if(state_player == RIGHT) { laser_positionX = x - 3; laser_positionY = y - 6; laser_id.image_xscale = -laser_id.stretchSize; }
+    if(state_player == UP) { laser_positionX = x; laser_positionY = y - 13; laser_id.image_yscale = -laser_id.stretchSize; laser_id.image_xscale = 1;}
+    else if(state_player == DOWN) { laser_positionX = x; laser_positionY = y - 6; laser_id.image_yscale = laser_id.stretchSize; laser_id.image_xscale = 1;}
+    else if(state_player == LEFT) { laser_positionX = x - 3; laser_positionY = y - 6; laser_id.image_xscale = -laser_id.stretchSize; laser_id.image_yscale = 1;}
+    else if(state_player == RIGHT) { laser_positionX = x + 3; laser_positionY = y - 6; laser_id.image_xscale = laser_id.stretchSize; laser_id.image_yscale = 1;}
     
     laser_id.x = laser_positionX;
     laser_id.y = laser_positionY;

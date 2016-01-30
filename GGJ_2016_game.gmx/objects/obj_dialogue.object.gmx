@@ -34,44 +34,14 @@
 message_current     = 0;            // Current message displaying
 timer               = 0;            // Counts delay
 cutoff              = 0;            // Cutoff the message at position
-portrait            = "diest";      // Type of portrait displayed
+portrait            = "none";      // Type of portrait displayed
 modifier            = 0;            // Type of modifier
 
 t                   = 0;
 increment           = 1;
 
 done                = false;        // Finished the dialogue
-
-// Create black bar around the text
-black_bar_id = instance_create(3, view_hview[0] - 57, obj_black_bar);
-with(black_bar_id)
-{
-    image_xscale = 50;
-    image_yscale = 2;
-}
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string></string>
           </argument>
         </arguments>
       </action>
@@ -102,7 +72,7 @@ message_end = array_length_1d(message);
 if(message_end &gt; 0)
 {
     
-    var charWidth           = 10;       // Distance between characters
+    var charWidth           = 30;       // Distance between characters
     var lineEnd             = 35;       // Line size
     var line                = 0;        // Current line
     var space               = 0;        // 
@@ -123,7 +93,7 @@ if(message_end &gt; 0)
     if(portrait == "none") var tX = 5;
     else var tX = 60;
     
-    var tY = view_hview[0] - 55;
+    var tY = view_hview[0] / 2;
     
     // Next message
     if(keyboard_check_pressed(vk_space))
