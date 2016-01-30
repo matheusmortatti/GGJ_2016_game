@@ -319,8 +319,8 @@ if(instance_exists(laser_id))
 {
     if(state_player == UP) { laser_positionX = x + 6; laser_positionY = y - 8; laser_id.image_angle = 180; laser_id.depth = -y + 6;}
     else if(state_player == DOWN) { laser_positionX = x - 6; laser_positionY = y - 6; laser_id.image_angle = 0}
-    else if(state_player == LEFT) { laser_positionX = x - 3; laser_positionY = y - 6; laser_id.image_angle = 270}
-    else if(state_player == RIGHT) { laser_positionX = x + 3; laser_positionY = y - 6; laser_id.image_angle = 90}
+    else if(state_player == LEFT) { laser_positionX = x - 2; laser_positionY = y - 9; laser_id.image_angle = 270; laser_id.image_xscale = 0.5;}
+    else if(state_player == RIGHT) { laser_positionX = x + 2; laser_positionY = y - 2; laser_id.image_angle = 90; laser_id.image_xscale = 0.5;}
     
     laser_id.x = laser_positionX;
     laser_id.y = laser_positionY;

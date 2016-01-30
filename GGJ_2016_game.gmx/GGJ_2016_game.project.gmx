@@ -41,6 +41,7 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_chat</font>
+    <font>fonts\f_hud</font>
   </fonts>
   <objects name="objects">
     <objects name="Text_Draw_Group">
