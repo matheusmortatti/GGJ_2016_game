@@ -28,8 +28,7 @@
             <string>/// Creation Code (variables set up)
 
 // Messages
-message[0] = "\0Hello \1World\0!";
-message[1] =  "Goodbye World!";
+// CREATE MESSAGE ON CREATION CODE WHEN OBJ PLACED IN ROOM
 
 
 message_current     = 0;            // Current message displaying
