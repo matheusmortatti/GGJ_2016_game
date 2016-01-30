@@ -27,9 +27,11 @@
             <kind>1</kind>
             <string>sequence[0] = UP;
 sequence[1] = DOWN;
+sequence[2] = DOWN;
 i = 0;
 step[0] = 0;
 step[1] = 0;
+step[2] = 0;
 erro = false;
 sair=false
 </string>
@@ -74,18 +76,21 @@ with(obj_ritual){
          step[i] = RIGHT;
          i++;
     }
-    for(j= 0;j &lt;= i &amp;&amp; !erro;j++){
+    for(j= 0;j &lt; i &amp;&amp; !erro;j++){
         if( step[j] != sequence[j]){
              erro = true;
         }
     }
+    
     if(erro){
         i = 0;
         erro = false
     }
     else{
+        if(i = 3){
         with(obj_player_leo){
         can_move = true;
+        }
         }
     }
     }}}
