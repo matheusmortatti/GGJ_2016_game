@@ -56,7 +56,11 @@
     <room>rooms\room_test_mat</room>
     <room>rooms\room_test_leo</room>
   </rooms>
-  <constants number="9">
+  <constants number="13">
+    <constant name="RIGHT">31</constant>
+    <constant name="LEFT">32</constant>
+    <constant name="DOWN">33</constant>
+    <constant name="UP">34</constant>
     <constant name="MARY">2</constant>
     <constant name="LSD">1</constant>
     <constant name="NORMAL">0</constant>
