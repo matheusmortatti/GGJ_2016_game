@@ -53,6 +53,7 @@
   <instances>
     <instance objName="obj_player_leo" x="160" y="192" name="inst_4F2F3880" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_state_changer" x="160" y="224" name="inst_73798256" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_ritual" x="64" y="224" name="inst_31DE696F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
