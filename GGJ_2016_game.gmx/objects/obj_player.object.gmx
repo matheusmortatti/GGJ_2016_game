@@ -198,10 +198,10 @@ else if state_player = DOWN then { image_speed = img_spd; sprite_index = sprites
 
 if(instance_exists(laser_id))
 {
-    if(state_player == UP) { laser_positionX = x; laser_positionY = y - 13; laser_id.image_yscale = -laser_id.stretchSize; }
-    else if(state_player == DOWN) { laser_positionX = x; laser_positionY = y - 6; laser_id.image_yscale = laser_id.stretchSize; }
-    else if(state_player == LEFT) { laser_positionX = x + 3; laser_positionY = y - 6; laser_id.image_xscale = laser_id.stretchSize; }
-    else if(state_player == RIGHT) { laser_positionX = x - 3; laser_positionY = y - 6; laser_id.image_xscale = -laser_id.stretchSize; }
+    if(state_player == UP) { laser_positionX = x; laser_positionY = y - 13; laser_id.image_yscale = -laser_id.stretchSize; laser_id.image_xscale = 1;}
+    else if(state_player == DOWN) { laser_positionX = x; laser_positionY = y - 6; laser_id.image_yscale = laser_id.stretchSize; laser_id.image_xscale = 1;}
+    else if(state_player == LEFT) { laser_positionX = x + 3; laser_positionY = y - 6; laser_id.image_xscale = laser_id.stretchSize; laser_id.image_yscale = 1;}
+    else if(state_player == RIGHT) { laser_positionX = x - 3; laser_positionY = y - 6; laser_id.image_xscale = -laser_id.stretchSize; laser_id.image_yscale = 1;}
     
     laser_id.x = laser_positionX;
     laser_id.y = laser_positionY;

@@ -25,22 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Creation Code
+            <string>/// Amount of damage recovered
 
-view_wport[0] = global.gameWidth;
-view_hport[0] = global.gameHeight;
-view_wview[0] = global.gameWidth;
-view_hview[0] = global.gameHeight;
-display_set_gui_size(global.gameWidth, global.gameHeight);
-room_speed = 60;
-ini_end = false;
-
+recover = irandom_range(10, 20);
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="4" ename="obj_player">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -57,31 +50,9 @@ ini_end = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Pixel Perfect refresh
-
-if(window_get_height() != global.gameHeight * global.zoom
-    &amp;&amp; window_get_width() != global.gameWidth * global.zoom
-    &amp;&amp; !window_get_fullscreen())
-{
-    window_set_size(global.gameWidth * global.zoom, global.gameHeight * global.zoom);
-    surface_resize(application_surface, global.gameWidth, global.gameHeight);
-    display_reset(0, false);
-}
-
-if(ini_end == false)
-{
-    x += (obj_player.x - x) / 100;
-    y += (obj_player.y - y) / 100;
-} else
-{
-    x += (obj_player.x - x) / 20;
-    y += (obj_player.y - y) / 20;
-}
-
-if(point_distance(x, y, obj_player.x, obj_player.y) &lt;= 50)
-{
-    ini_end = true;
-}
+            <string>/// Recover damage
+other.hp += recover;
+instance_destroy();
 </string>
           </argument>
         </arguments>
