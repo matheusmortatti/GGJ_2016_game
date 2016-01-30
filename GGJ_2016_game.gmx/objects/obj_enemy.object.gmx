@@ -31,6 +31,8 @@ path = path_add();
 
 spd = 2;
 
+pursuing = false;
+
 alarm[0] = 1 * room_speed;
 </string>
           </argument>
@@ -82,7 +84,7 @@ if(path_exists(path)) {
             <kind>1</kind>
             <string>/// Move towards player
 
-scr_path_to_player();
+if(pursuing) scr_path_to_player();
 
 alarm[0] = 1 * room_speed;
 </string>
@@ -108,7 +110,13 @@ alarm[0] = 1 * room_speed;
           <argument>
             <kind>1</kind>
             <string>/// Update depth
-depth = -y;
+
+depth = -y + 1;
+
+if(point_distance(x, y, obj_player.x, obj_player.y) &lt; 50)
+{
+    pursuing = true;
+}
 </string>
           </argument>
         </arguments>
@@ -131,7 +139,17 @@ depth = -y;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>/// Move away from the other enemy
+if (x == other.x &amp;&amp; other == other.y)
+{
+    movement_script(sign(other.id - id), 0);
+}
+
+var dir = point_direction(other.x, other.y, x, y);
+var hspd = lengthdir_x(1, dir);
+var vspd = lengthdir_y(1, dir);
+movement_script(hspd, vspd);
+</string>
           </argument>
         </arguments>
       </action>
