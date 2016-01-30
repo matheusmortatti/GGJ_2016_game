@@ -55,9 +55,9 @@
     <room>rooms\room_test_leo</room>
   </rooms>
   <constants number="9">
-    <constant name="STATE_MARY">2</constant>
-    <constant name="STATE_LSD">1</constant>
-    <constant name="STATE_NORMAL">0</constant>
+    <constant name="MARY">2</constant>
+    <constant name="LSD">1</constant>
+    <constant name="NORMAL">0</constant>
     <constant name="CELL_WIDTH">32</constant>
     <constant name="CELL_HEIGHT">32</constant>
     <constant name="FLOOR">-5</constant>
