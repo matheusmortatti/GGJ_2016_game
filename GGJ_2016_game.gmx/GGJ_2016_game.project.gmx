@@ -26,7 +26,6 @@
     <script>scripts\movement_script.gml</script>
     <script>scripts\grid_place_meeting.gml</script>
     <script>scripts\scr_init_game.gml</script>
-    <script>scripts\script3.gml</script>
     <script>scripts\scr_path_to_player.gml</script>
   </scripts>
   <fonts name="fonts">
