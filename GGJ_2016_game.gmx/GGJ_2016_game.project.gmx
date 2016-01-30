@@ -13,6 +13,7 @@
     <sprite>sprites\spr_player_down</sprite>
     <sprite>sprites\spr_player_right</sprite>
     <sprite>sprites\spr_player_left</sprite>
+    <sprite>sprites\spr_enemy</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tile_floor</background>
@@ -26,6 +27,7 @@
     <script>scripts\grid_place_meeting.gml</script>
     <script>scripts\scr_init_game.gml</script>
     <script>scripts\script3.gml</script>
+    <script>scripts\scr_path_to_player.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_chat</font>
@@ -43,6 +45,7 @@
       <object>objects\obj_player</object>
       <object>objects\obj_player_leo</object>
       <object>objects\obj_camera</object>
+      <object>objects\obj_enemy</object>
     </objects>
     <objects name="Menu_Control_Group">
       <object>objects\obj_redir</object>
