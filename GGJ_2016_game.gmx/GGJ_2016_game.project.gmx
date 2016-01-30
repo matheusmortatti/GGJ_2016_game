@@ -33,7 +33,7 @@
     </objects>
     <objects name="Room_Gen_Group">
       <object>objects\obj_level_generator</object>
-      <object>objects\obj_procedural_rooms</object>
+      <object>objects\obj_procedural_room</object>
     </objects>
     <objects name="Actors_Group">
       <object>objects\obj_player</object>
@@ -50,15 +50,16 @@
     <room>rooms\room_test_mat</room>
     <room>rooms\room_test_leo</room>
   </rooms>
-  <constants number="8">
-    <constant name="MARY">2</constant>
-    <constant name="LSD">1</constant>
-    <constant name="NORMAL">0</constant>
+  <constants number="9">
+    <constant name="STATE_MARY">2</constant>
+    <constant name="STATE_LSD">1</constant>
+    <constant name="STATE_NORMAL">0</constant>
     <constant name="CELL_WIDTH">32</constant>
     <constant name="CELL_HEIGHT">32</constant>
     <constant name="FLOOR">-5</constant>
     <constant name="WALL">-6</constant>
     <constant name="VOID">-7</constant>
+    <constant name="OBSTACLE">-8</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
