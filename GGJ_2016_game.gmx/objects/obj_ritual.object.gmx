@@ -55,7 +55,7 @@ sair=false
           <argument>
             <kind>1</kind>
             <string>
-with (obj_player){
+with (obj_player_leo){
 if !can_move then{
 with(obj_ritual){
     if(keyboard_check_pressed(vk_up)){
