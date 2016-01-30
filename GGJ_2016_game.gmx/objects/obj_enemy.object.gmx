@@ -276,14 +276,14 @@ if(path_exists(path)) {
             <kind>1</kind>
             <string>///Set sprites set
 if(global.state_std == NORMAL){
-sprites_array[0] = spr_player;
-sprites_array[1] = spr_player_up;
-sprites_array[2] = spr_player_down;
-sprites_array[3] = spr_player_right;
-sprites_array[4] = spr_player_left;
-sprites_array[5] = spr_player_up_s;
-sprites_array[6] = spr_player_right_s;
-sprites_array[7] = spr_player_left_s;
+sprites_array[0] = spr_enemy;
+sprites_array[1] = spr_enemy_up;
+sprites_array[2] = spr_enemy_down;
+sprites_array[3] = spr_enemy_right;
+sprites_array[4] = spr_enemy_left;
+sprites_array[5] = spr_enemy_up;
+sprites_array[6] = spr_enemy_right;
+sprites_array[7] = spr_enemy_left;
 } else
 if(global.state_std == MARY){
 sprites_array[0] = spr_player_m;
