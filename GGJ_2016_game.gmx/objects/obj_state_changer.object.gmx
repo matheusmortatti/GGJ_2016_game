@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Global Variables
-global.state_std = NORMAL
+global.state_std = 0;
 </string>
           </argument>
         </arguments>
@@ -50,7 +50,7 @@ global.state_std = NORMAL
           <argument>
             <kind>1</kind>
             <string>//check state
-if(!global.state_geral != NORMAL){
+if(!(global.state_std != NORMAL)){
     if(global.state_std == LSD){
         //new sprites
         with(obj_player_leo){
