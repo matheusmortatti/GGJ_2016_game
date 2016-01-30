@@ -31,8 +31,8 @@
 scr_init_game();
 
 // Set room size
-room_width = (CELL_WIDTH div 16) * 720;
-room_height = (CELL_HEIGHT div 16) * 720;
+room_width = (CELL_WIDTH div 16) * 500;
+room_height = (CELL_HEIGHT div 16) * 500;
 
 // set the grid's width and height
 var width = room_width div CELL_WIDTH;
@@ -54,9 +54,6 @@ var cy = height div 2;
 
 // Create instance of the camera
 instance_create(0, 0, obj_camera);
-
-// Place player in the room
-instance_create(cx * CELL_WIDTH + CELL_WIDTH / 2, cy * CELL_HEIGHT + CELL_HEIGHT / 2, obj_player);
 
 // Add the tiles to the grid
 for(var yy = 2; yy &lt; height - 2; yy++)
@@ -83,8 +80,45 @@ for(var yy = 4; yy &lt; height - 4; yy++)
     {
         if(irandom(odds) == odds)
         {
-            grid[# xx, yy] = OBSTACLE;
+            if(grid[# xx + 1, yy] != WALL &amp;&amp; grid[# xx + 1, yy - 1] != WALL &amp;&amp; grid[# xx, yy - 1] != WALL &amp;&amp; grid[# xx - 1, yy - 1] != WALL &amp;&amp;
+                grid[# xx - 1, yy] != WALL &amp;&amp; grid[# xx - 1, yy + 1] != WALL &amp;&amp; grid[# xx, yy + 1] != WALL &amp;&amp; grid[# xx + 1, yy + 1] != WALL)
+            {
+                grid[# xx, yy] = OBSTACLE;
+            }
         }
+    }
+}
+
+// Place random walls
+for(var xx = 2; xx &lt; width - 3; xx++)
+{
+    var yy = 0;
+    var wall_close = false;
+    if(irandom(odds) == odds)
+    {
+        for(var xx_temp = xx; xx_temp &gt; xx - 8 &amp;&amp; !wall_close; xx_temp--) if(grid[# xx_temp, 2] == WALL) wall_close = true;
+        
+        if(!wall_close)
+        {
+            for(yy = 2; yy &lt; height / 2 - 3; yy++)
+            {
+                grid[# xx, yy] = WALL;
+            }
+        } else wall_close = false;
+    }
+    
+    var wall_close = false;
+    if(irandom(odds) == odds)
+    {
+        for(var xx_temp = xx; xx_temp &gt; xx - 8 &amp;&amp; !wall_close; xx_temp--) if(grid[# xx_temp, height / 2] == WALL) wall_close = true;
+        
+        if(!wall_close)
+        {
+            for(yy = height - 2; yy &gt; (height / 2) - 1; yy--)
+            {
+                grid[# xx, yy] = WALL;
+            }
+        } else wall_close = false;
     }
 }
 
@@ -99,6 +133,20 @@ for(var yy = 1; yy &lt; height; yy++)
     }
 }
 
+// Sets controller
+var cx = width - 3;
+var cy = height - 3;
+
+// Makes sure player doesnt spawn inside a wall os object
+while(grid[# cx, cy] == WALL or grid[# cx, cy] == OBSTACLE)
+{
+    cx--;
+    cy--
+}
+
+// Place player in the room
+instance_create(cx * CELL_WIDTH + CELL_WIDTH / 2, cy * CELL_HEIGHT + CELL_HEIGHT / 2, obj_player);
+
 // Get tile sizes
 var tw = CELL_WIDTH / 2;
 var th = CELL_HEIGHT / 2;
@@ -108,7 +156,7 @@ for (var yy = 0; yy &lt; height * 2; yy++)
 {
     for(var xx = 0; xx &lt; width * 2; xx++)
     {
-        if(grid[# xx div 2, yy div 2] == FLOOR)
+        if(grid[# xx div 2, yy div 2] == FLOOR or grid[# xx div 2, yy div 2] == OBSTACLE)
         {
             // Get the tile's position
             var tx = xx * tw;
