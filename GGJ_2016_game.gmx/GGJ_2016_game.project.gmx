@@ -34,6 +34,10 @@
     <sprite>sprites\spr_health_pack</sprite>
     <sprite>sprites\spr_weed</sprite>
     <sprite>sprites\spr_arrow</sprite>
+    <sprite>sprites\spr_arrow_up</sprite>
+    <sprite>sprites\spr_arrow_down</sprite>
+    <sprite>sprites\spr_arrow_left</sprite>
+    <sprite>sprites\spr_arrow_right</sprite>
     <sprite>sprites\spr_bottle</sprite>
     <sprite>sprites\spr_trash</sprite>
     <sprite>sprites\sprite22</sprite>
