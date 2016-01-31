@@ -31,7 +31,7 @@ sequence[2] = choose(UP, DOWN, LEFT, RIGHT);
 sequence[3] = choose(UP, DOWN, LEFT, RIGHT);
 sequence[4] = choose(UP, DOWN, LEFT, RIGHT);
 i = 0;
-
+instance_create(obj_player.x, obj_player.y, obj_arrows);
 erro = false;
 sair=false
 </string>

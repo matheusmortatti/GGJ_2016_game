@@ -83,6 +83,7 @@
       <object>objects\obj_weed</object>
       <object>objects\obj_bottle</object>
       <object>objects\obj_trash</object>
+      <object>objects\obj_arrows</object>
     </objects>
     <objects name="Menu_Control_Group">
       <object>objects\obj_redir</object>
