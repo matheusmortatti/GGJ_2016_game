@@ -452,7 +452,7 @@ if(canTeleport)
     canTeleport = false;
     alarm[4] = 0.5 * room_speed
     
-    if(state_player == UP)
+    if(sign(vspd) == -1)
     {
         
         var yy = y;
@@ -463,7 +463,7 @@ if(canTeleport)
         y = ++yy;
     
     } else
-    if(state_player == DOWN)
+    if(sign(vspd) == 1)
     {
         
         var yy = y;
@@ -474,7 +474,7 @@ if(canTeleport)
         y = --yy;
     
     } else
-    if(state_player == LEFT)
+    if(sign(hspd) == -1)
     {
         
         var xx = x;
@@ -485,7 +485,7 @@ if(canTeleport)
         x = ++xx;
     
     } else
-    if(state_player == RIGHT)
+    if(sign(hspd) == 1)
     {
         
         var xx = x;
