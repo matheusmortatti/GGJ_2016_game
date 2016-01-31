@@ -176,8 +176,16 @@ if(hp &lt;= 0)
 {
     if(irandom(2) == 2) instance_create(x, y, obj_health_pack);
     
-    if(irandom(1) == 1) audio_play_sound(snd_morte_favoravel, 10, false);
-    else audio_play_sound(snd_morte_tranquila, 10, false);
+    if(irandom(1) == 1) {
+        audio_play_sound(snd_morte_favoravel, 10, false);
+        audio_sound_gain(snd_morte_favoravel, 0.3, 0);
+        audio_sound_gain(snd_morte_favoravel, 0.3, 1000);
+    }
+    else {
+        audio_play_sound(snd_morte_tranquila, 10, false);
+        audio_sound_gain(snd_morte_tranquila, 0.3, 0);
+        audio_sound_gain(snd_morte_tranquila, 0.3, 1000);
+    }
     
     instance_destroy();
 }

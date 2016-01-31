@@ -8,9 +8,10 @@
     <sound>sound\snd_morte_tranquila</sound>
     <sound>sound\snd_morte_favoravel</sound>
     <sound>sound\snd_laser</sound>
-    <sound>sound\snd_step</sound>
+    <sound>sound\snd_step_1</sound>
     <sound>sound\snd_teleport</sound>
     <sound>sound\snd_larica</sound>
+    <sound>sound\snd_step_2</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_portrait</sprite>
@@ -37,7 +38,6 @@
     <sprite>sprites\spr_arrow_down</sprite>
     <sprite>sprites\spr_arrow_left</sprite>
     <sprite>sprites\spr_arrow_right</sprite>
-    <sprite>sprites\spr_bottle</sprite>
     <sprite>sprites\spr_trash</sprite>
     <sprite>sprites\sprite22</sprite>
     <sprite>sprites\sprite23</sprite>
