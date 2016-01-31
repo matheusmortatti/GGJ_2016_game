@@ -34,6 +34,7 @@ view_hview[0] = global.gameHeight;
 display_set_gui_size(global.gameWidth, global.gameHeight);
 room_speed = 60;
 ini_end = false;
+flag = false;
 
 </string>
           </argument>
@@ -78,9 +79,14 @@ if(ini_end == false)
     y += (obj_player.y - y) / 20;
 }
 
-if(point_distance(x, y, obj_player.x, obj_player.y) &lt;= 50)
+if(point_distance(x, y, obj_player.x, obj_player.y) &lt;= 100)
 {
     ini_end = true;
+}
+
+if(ini_end == true &amp;&amp; flag == false) {
+    obj_player.sprite_index = spr_player_weed;
+    flag = true;
 }
 </string>
           </argument>
