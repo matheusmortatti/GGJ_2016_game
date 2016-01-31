@@ -28,6 +28,7 @@
             <string>/// Amount of damage recovered
 
 recover = irandom_range(10, 30);
+image_speed = 0.4
 </string>
           </argument>
         </arguments>
