@@ -24,6 +24,7 @@
     <sprite>sprites\spr_player_right_s</sprite>
     <sprite>sprites\spr_player_down_l</sprite>
     <sprite>sprites\spr_health_pack</sprite>
+    <sprite>sprites\spr_weed</sprite>
     <sprite>sprites\spr_arrow</sprite>
   </sprites>
   <backgrounds name="background">
@@ -43,6 +44,7 @@
   <fonts name="fonts">
     <font>fonts\f_chat</font>
     <font>fonts\f_hud</font>
+    <font>fonts\f_ini</font>
   </fonts>
   <objects name="objects">
     <objects name="Text_Draw_Group">
@@ -60,6 +62,7 @@
       <object>objects\obj_enemy</object>
       <object>objects\obj_laser</object>
       <object>objects\obj_health_pack</object>
+      <object>objects\obj_weed</object>
     </objects>
     <objects name="Menu_Control_Group">
       <object>objects\obj_redir</object>
