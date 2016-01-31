@@ -53,6 +53,9 @@ recover = irandom_range(10, 30);
             <string>/// Recover damage
 if(other.hp != 100)
 {
+    audio_play_sound(snd_larica, 10, false);
+    audio_sound_gain(snd_larica, 0.3, 0);
+    audio_sound_gain(snd_larica, 0.3, 1000);
     other.hp += recover;
     instance_destroy();
 }

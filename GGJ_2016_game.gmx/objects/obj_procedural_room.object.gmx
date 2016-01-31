@@ -126,8 +126,8 @@ for(var xx = 2; xx &lt; width - 3; xx++)
 }
 
 // Sets controller
-var cx = width - 3;
-var cy = height - 3;
+var cx = width - 10;
+var cy = height - 10;
 
 // Makes sure player doesnt spawn inside a wall os object
 while(grid[# cx, cy] == WALL or grid[# cx, cy] == OBSTACLE)

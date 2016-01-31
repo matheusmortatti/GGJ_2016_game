@@ -34,7 +34,7 @@ flag_up = false;
 flag_down = false;
 flag_left = false;
 flag_right = false;
-img_spd = 0.05;
+img_spd = 0.04;
 canShoot = true;
 laser_id = 0;
 state_player = DOWN;
@@ -46,6 +46,34 @@ knockback = false;
 teleport_distance = 50;
 justShot = false;
 canTeleport = true;
+canPlayStep = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>audio_play_sound(snd_step, 10, false);
+audio_sound_gain(snd_step, 0.3, 0);
+audio_sound_gain(snd_step, 0.3, 1000);
+
+canPlayStep = true;
 </string>
           </argument>
         </arguments>
@@ -349,6 +377,36 @@ if (hp &lt;= 0) room_restart();
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Play sound step
+
+if(canPlayStep == true ) 
+{   
+    if (keyboard_check(ord('A')) || keyboard_check(ord('W')) || keyboard_check(ord('S')) || keyboard_check(ord('D')))
+    {
+    canPlayStep = false;
+    alarm[5] = 0.2 * room_speed;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="4" ename="obj_enemy">
       <action>
@@ -441,6 +499,10 @@ if(canShoot)
     laser_id.image_speed = img_spd * 5;
     alarm[0] = 1 * room_speed;
     justShot = true;
+    
+    audio_play_sound(snd_laser, 10, false);
+    audio_sound_gain(snd_laser, 0.3, 0);
+    audio_sound_gain(snd_laser, 0.3, 1000);
 }
 </string>
           </argument>
@@ -468,7 +530,9 @@ if(canShoot)
 
 if(canTeleport)
 {
-
+    audio_play_sound(snd_teleport, 10, false);
+    audio_sound_gain(snd_teleport, 0.3, 0);
+    audio_sound_gain(snd_teleport, 0.3, 1000);
     canTeleport = false;
     alarm[4] = 0.5 * room_speed
     
