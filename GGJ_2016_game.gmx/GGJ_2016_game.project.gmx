@@ -8,8 +8,7 @@
     <sound>sound\snd_morte_tranquila</sound>
     <sound>sound\snd_morte_favoravel</sound>
     <sound>sound\snd_laser</sound>
-    <sound>sound\snd_step_1</sound>
-    <sound>sound\snd_step_2</sound>
+    <sound>sound\snd_step</sound>
     <sound>sound\snd_teleport</sound>
     <sound>sound\snd_larica</sound>
   </sounds>
@@ -51,7 +50,6 @@
     <background>background\bg_tiles</background>
     <background>background\bg_bottle</background>
     <background>background\bg_trash</background>
-    <background>background\bg_filter</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">

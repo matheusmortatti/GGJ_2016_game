@@ -34,7 +34,7 @@ flag_up = false;
 flag_down = false;
 flag_left = false;
 flag_right = false;
-img_spd = 0.05;
+img_spd = 0.04;
 canShoot = true;
 laser_id = 0;
 state_player = DOWN;
@@ -47,7 +47,6 @@ teleport_distance = 50;
 justShot = false;
 canTeleport = true;
 canPlayStep = true;
-whichStep = 0;
 </string>
           </argument>
         </arguments>
@@ -70,17 +69,9 @@ whichStep = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(whichStep == 0) {
-    audio_play_sound(snd_step_1, 10, false);
-    audio_sound_gain(snd_step_1, 0.3, 0);
-    audio_sound_gain(snd_step_1, 0.3, 1000);
-    whichStep = 1;
-} else {
-    audio_play_sound(snd_step_2, 10, false);
-    audio_sound_gain(snd_step_2, 0.3, 0);
-    audio_sound_gain(snd_step_2, 0.3, 1000);
-    whichStep = 0;
-}
+            <string>audio_play_sound(snd_step, 10, false);
+audio_sound_gain(snd_step, 0.3, 0);
+audio_sound_gain(snd_step, 0.3, 1000);
 
 canPlayStep = true;
 </string>
@@ -288,42 +279,42 @@ sprites_array[4] = spr_player_left_l;
           <argument>
             <kind>1</kind>
             <string>///Move caracter
-if(!knockback  &amp;&amp; !keyboard_check(vk_up) &amp;&amp; !keyboard_check(vk_down)
+if(can_move &amp;&amp;!knockback  &amp;&amp; !keyboard_check(vk_up) &amp;&amp; !keyboard_check(vk_down)
 &amp;&amp; !keyboard_check(vk_left)&amp;&amp; !keyboard_check(vk_right))
 {
 if x=xprevious then {
-if y&lt;yprevious then {state_player = UP; image_speed = img_spd*2;sprite_index = sprites_array[1]}
-else if y&gt;yprevious then {state_player = DOWN; image_speed = img_spd*2;sprite_index = sprites_array[2]}
+if y&lt;yprevious then {state_player = UP; image_speed = img_spd*3;sprite_index = sprites_array[1]}
+else if y&gt;yprevious then {state_player = DOWN; image_speed = img_spd*3;sprite_index = sprites_array[2]}
 else if state_player = DOWN then { image_speed = img_spd; sprite_index = sprites_array[0]}
 else if state_player = UP then { image_speed = img_spd; sprite_index = sprites_array[5]}
 else if state_player = RIGHT then { image_speed = img_spd; sprite_index = sprites_array[6]}
 else if state_player = LEFT then { image_speed = img_spd; sprite_index = sprites_array[7]}}
 else if y=yprevious then {
-if x&lt;xprevious then {state_player = LEFT; image_speed = img_spd*2;sprite_index = sprites_array[4]}
-else if x&gt;xprevious then {state_player = RIGHT; image_speed = img_spd*2;sprite_index = sprites_array[3]}
+if x&lt;xprevious then {state_player = LEFT; image_speed = img_spd*3;sprite_index = sprites_array[4]}
+else if x&gt;xprevious then {state_player = RIGHT; image_speed = img_spd*3;sprite_index = sprites_array[3]}
 else if state_player = DOWN then { image_speed = img_spd; sprite_index = sprites_array[0]}else{image_speed = 0}}
 }
 if keyboard_check(vk_up){
 if(y!=yprevious){
-state_player = UP; image_speed = img_spd*2;sprite_index = sprites_array[1];
+state_player = UP; image_speed = img_spd*3;sprite_index = sprites_array[1];
 }else{
 state_player = UP; image_speed = img_spd; sprite_index = sprites_array[5];
 }
 }else if keyboard_check(vk_down){
 if(y!=yprevious){
-state_player = DOWN; image_speed = img_spd*2;sprite_index = sprites_array[2]
+state_player = DOWN; image_speed = img_spd*3;sprite_index = sprites_array[2]
 }else{
 state_player = DOWN; image_speed = img_spd; sprite_index = sprites_array[0]
 }}
 else if keyboard_check(vk_left){
 if(x!=xprevious){
-state_player = LEFT; image_speed = img_spd*2;sprite_index = sprites_array[4]
+state_player = LEFT; image_speed = img_spd*3;sprite_index = sprites_array[4]
 }else{
 state_player = LEFT; image_speed = img_spd; sprite_index = sprites_array[7]
 }}
 else if keyboard_check(vk_right){
 if(x!=xprevious){
-state_player = RIGHT; image_speed = img_spd*2;sprite_index = sprites_array[3]
+state_player = RIGHT; image_speed = img_spd*3;sprite_index = sprites_array[3]
 }else{
 state_player = RIGHT; image_speed = img_spd; sprite_index = sprites_array[6]
 }}
@@ -409,7 +400,7 @@ if(canPlayStep == true )
     if (keyboard_check(ord('A')) || keyboard_check(ord('W')) || keyboard_check(ord('S')) || keyboard_check(ord('D')))
     {
     canPlayStep = false;
-    alarm[5] = 0.4 * room_speed;
+    alarm[5] = 0.2 * room_speed;
     }
 }
 </string>
@@ -505,7 +496,7 @@ if(canShoot)
     canShoot = false;
     laser_id = instance_create(x, y, obj_laser);
 
-    laser_id.image_speed = img_spd * 7;
+    laser_id.image_speed = img_spd * 5;
     alarm[0] = 1 * room_speed;
     justShot = true;
     

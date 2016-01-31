@@ -121,13 +121,13 @@ with(obj_ritual){
 if(!obj_player.can_move){
 
     if (sequence[i] == LEFT) then{
-        draw_sprite(spr_arrow, 0, 10, 10 );
+        draw_sprite(spr_arrow, 0, obj_player.x , obj_player.y   );
     }else if (sequence[i] == UP) then{
-        draw_sprite(spr_arrow, 1,  10, 10  );
+        draw_sprite(spr_arrow, 1,  obj_player.x , obj_player.y  );
     }else if (sequence[i] == RIGHT) then{
-        draw_sprite(spr_arrow, 2, 10, 10  );
+        draw_sprite(spr_arrow, 2, obj_player.x , obj_player.y  );
     }else if (sequence[i] == DOWN) then{
-        draw_sprite(spr_arrow, 3, 10, 10  );
+        draw_sprite(spr_arrow, 3, obj_player.x , obj_player.y );
 
     }
 }
