@@ -26,12 +26,16 @@
     <sprite>sprites\spr_health_pack</sprite>
     <sprite>sprites\spr_weed</sprite>
     <sprite>sprites\spr_arrow</sprite>
+    <sprite>sprites\spr_bottle</sprite>
+    <sprite>sprites\spr_trash</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tile_floor</background>
     <background>background\bg_tile_wall</background>
     <background>background\bg_tile_void</background>
     <background>background\bg_tiles</background>
+    <background>background\bg_bottle</background>
+    <background>background\bg_trash</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -63,6 +67,8 @@
       <object>objects\obj_laser</object>
       <object>objects\obj_health_pack</object>
       <object>objects\obj_weed</object>
+      <object>objects\obj_bottle</object>
+      <object>objects\obj_trash</object>
     </objects>
     <objects name="Menu_Control_Group">
       <object>objects\obj_redir</object>
