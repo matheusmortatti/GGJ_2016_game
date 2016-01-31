@@ -291,7 +291,8 @@ if(path_exists(path)) {
           <argument>
             <kind>1</kind>
             <string>///Set sprites set
-if(global.state_std == NORMAL){
+//if(global.state_std == NORMAL){
+if(obj_player.can_move){
 sprites_array[0] = spr_enemy;
 sprites_array[1] = spr_enemy_up;
 sprites_array[2] = spr_enemy_down;
@@ -300,20 +301,20 @@ sprites_array[4] = spr_enemy_left;
 sprites_array[5] = spr_enemy_up;
 sprites_array[6] = spr_enemy_right;
 sprites_array[7] = spr_enemy_left;
-} else
-if(global.state_std == MARY){
-sprites_array[0] = spr_player_m;
-sprites_array[1] = spr_player_up_m;
-sprites_array[2] = spr_player_down_m;
-sprites_array[3] = spr_player_right_m;
-sprites_array[4] = spr_player_left_m;
-}if(global.state_std == LSD){
+} else{
+//if(global.state_std == MARY){
+sprites_array[0] = sprite22;
+sprites_array[1] = sprite22;
+sprites_array[2] = sprite22;
+sprites_array[3] = sprite22;
+sprites_array[4] = sprite22;}
+/*}if(global.state_std == LSD){
 sprites_array[0] = spr_player_l;
 sprites_array[1] = spr_player_up_l;
 sprites_array[2] = spr_player_down_l;
 sprites_array[3] = spr_player_right_l;
 sprites_array[4] = spr_player_left_l;
-}
+}*/
 </string>
           </argument>
         </arguments>
@@ -372,7 +373,7 @@ else if state_player = DOWN then { image_speed = img_spd; sprite_index = sprites
 
 // Draws itself
 draw_self();
-
+if (obj_player.can_move)
 // Draws healthbar
 draw_healthbar(x - 25, y - 20, x + 25, y - 18, hp, c_black, c_red, c_green, 0, false, false);
 
