@@ -24,6 +24,7 @@
     <sprite>sprites\spr_player_right_s</sprite>
     <sprite>sprites\spr_player_down_l</sprite>
     <sprite>sprites\spr_health_pack</sprite>
+    <sprite>sprites\spr_arrow</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tile_floor</background>
