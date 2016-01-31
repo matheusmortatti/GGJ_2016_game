@@ -7,18 +7,18 @@
   <coltolerance>0</coltolerance>
   <sepmasks>-1</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>0</bbox_left>
-  <bbox_right>10</bbox_right>
-  <bbox_top>0</bbox_top>
-  <bbox_bottom>127</bbox_bottom>
+  <bbox_left>-1</bbox_left>
+  <bbox_right>20</bbox_right>
+  <bbox_top>-1</bbox_top>
+  <bbox_bottom>136</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>11</width>
-  <height>128</height>
+  <width>25</width>
+  <height>139</height>
   <frames>
     <frame index="0">images\spr_laser_0.png</frame>
     <frame index="1">images\spr_laser_1.png</frame>
@@ -34,5 +34,16 @@
     <frame index="11">images\spr_laser_11.png</frame>
     <frame index="12">images\spr_laser_12.png</frame>
     <frame index="13">images\spr_laser_13.png</frame>
+    <frame index="14">images\spr_laser_14.png</frame>
+    <frame index="15">images\spr_laser_15.png</frame>
+    <frame index="16">images\spr_laser_16.png</frame>
+    <frame index="17">images\spr_laser_17.png</frame>
+    <frame index="18">images\spr_laser_18.png</frame>
+    <frame index="19">images\spr_laser_19.png</frame>
+    <frame index="20">images\spr_laser_20.png</frame>
+    <frame index="21">images\spr_laser_21.png</frame>
+    <frame index="22">images\spr_laser_22.png</frame>
+    <frame index="23">images\spr_laser_23.png</frame>
+    <frame index="24">images\spr_laser_24.png</frame>
   </frames>
 </sprite>

@@ -152,7 +152,7 @@ for(var yy = 1; yy &lt; height; yy++)
             odds = 20;
             var ex = xx * CELL_WIDTH + CELL_WIDTH / 2;
             var ey = yy * CELL_HEIGHT + CELL_HEIGHT / 2;
-            if(point_distance(ex, ey, obj_player.x, obj_player.y) &gt; 50 &amp;&amp;
+            if(point_distance(ex, ey, obj_player.x, obj_player.y) &gt; 151 &amp;&amp;
                 irandom(odds) == odds)
             {
                 instance_create(ex, ey, obj_enemy);
@@ -265,6 +265,31 @@ for (var yy = 0; yy &lt; height * 2; yy++)
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Win!
+
+if(instance_number(obj_enemy) == 0) game_end();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="5">
       <action>
         <libid>1</libid>
@@ -282,7 +307,7 @@ for (var yy = 0; yy &lt; height * 2; yy++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Clean Up
+            <string>/// Clean Up
 
 ds_grid_destroy(grid);
 mp_grid_destroy(grid_path);
@@ -312,6 +337,7 @@ mp_grid_destroy(grid_path);
 draw_set_colour(c_white);
 
 draw_text(20, view_hview[0] - 20, "Z - Shoot lasers     X - Dodge    Arrow Keys - Move");
+draw_text(20, 20, "Enemies Left: " + string(instance_number(obj_enemy)));
 </string>
           </argument>
         </arguments>
