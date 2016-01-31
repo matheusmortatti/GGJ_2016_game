@@ -83,10 +83,8 @@ if(point_distance(x, y, obj_player.x, obj_player.y) &lt;= 50)
     
     ini_end = true;
 }
-<<<<<<< HEAD
 if(ini_end){
     obj_player.sprite_index = spr_player_weed;
-=======
 if(ini_end &amp;&amp; flag == false){
    // obj_player.sprite_index = spr_player_weed;
     //obj_player.image_speed = 0.1
@@ -94,7 +92,6 @@ if(ini_end &amp;&amp; flag == false){
 if(obj_player.image_index == 56) 
 {
     flag = true;
->>>>>>> origin/master
 }
 </string>
           </argument>
