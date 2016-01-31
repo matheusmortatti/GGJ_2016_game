@@ -34,6 +34,7 @@ view_hview[0] = global.gameHeight;
 display_set_gui_size(global.gameWidth, global.gameHeight);
 room_speed = 60;
 ini_end = false;
+flag= false;
 
 </string>
           </argument>
@@ -92,7 +93,7 @@ if(ini_end &amp;&amp; flag == false){
 if(obj_player.image_index == 56) 
 {
     flag = true;
-}
+}}
 </string>
           </argument>
         </arguments>
