@@ -163,10 +163,13 @@ for(var yy = 1; yy &lt; height; yy++)
             
             if(grid[# xx, yy] == OBSTACLE) 
             {
+                var ex = xx * CELL_WIDTH + CELL_WIDTH / 2;
+                var ey = yy * CELL_HEIGHT + CELL_HEIGHT / 2;
+                
                 if(irandom(1) == 1)
-                    instance_create(xx, yy, obj_bottle);
+                    instance_create(ex, ey, obj_bottle);
                 else
-                    instance_create(xx, yy, obj_trash);
+                    instance_create(ex, ey, obj_trash);
                     
                
             }

@@ -4,7 +4,13 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_morte_tranquila</sound>
+    <sound>sound\snd_morte_favoravel</sound>
+    <sound>sound\snd_laser</sound>
+    <sound>sound\snd_step</sound>
+    <sound>sound\snd_teleport</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_portrait</sprite>
     <sprite>sprites\spr_black_bar</sprite>
@@ -28,6 +34,8 @@
     <sprite>sprites\spr_arrow</sprite>
     <sprite>sprites\spr_bottle</sprite>
     <sprite>sprites\spr_trash</sprite>
+    <sprite>sprites\sprite22</sprite>
+    <sprite>sprites\sprite23</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tile_floor</background>

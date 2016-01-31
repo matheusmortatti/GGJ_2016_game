@@ -175,6 +175,10 @@ if(point_distance(x, y, obj_player.x, obj_player.y) &lt; 150)
 if(hp &lt;= 0)
 {
     if(irandom(2) == 2) instance_create(x, y, obj_health_pack);
+    
+    if(irandom(1) == 1) audio_play_sound(snd_morte_favoravel, 10, false);
+    else audio_play_sound(snd_morte_tranquila, 10, false);
+    
     instance_destroy();
 }
 </string>

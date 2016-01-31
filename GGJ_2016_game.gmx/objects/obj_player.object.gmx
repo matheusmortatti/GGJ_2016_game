@@ -276,7 +276,7 @@ state_player = UP; image_speed = img_spd; sprite_index = sprites_array[5];
 if(y!=yprevious){
 state_player = DOWN; image_speed = img_spd*3;sprite_index = sprites_array[2]
 }else{
-state_player = DOWN; image_speed = img_spd; sprite_index = sprites_array[8]
+state_player = DOWN; image_speed = img_spd; sprite_index = sprites_array[0]
 }}
 else if keyboard_check(vk_left){
 if(x!=xprevious){
